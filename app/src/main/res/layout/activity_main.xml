@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fce4ec"
+    android:outlineProvider="paddedBounds">
+
+    <Button
+        android:layout_width="256dp"
+        android:layout_height="64dp"
+        android:id="@+id/btn_dress"
+        android:text="dress me"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:typeface="serif"
+        android:textStyle="italic"
+        android:layout_marginTop="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:elegantTextHeight="false" />
+
+    <Button
+        android:layout_width="256dp"
+        android:layout_height="64dp"
+        android:id="@+id/btn_wardrobe"
+        android:text="wardrobe"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:typeface="serif"
+        android:textStyle="italic"
+        android:elegantTextHeight="false"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/btn_dress"
+        android:layout_alignStart="@+id/btn_dress"/>
+
+    <Button
+        android:layout_width="256dp"
+        android:layout_height="64dp"
+        android:id="@+id/btn_add"
+        android:text="add new item"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:typeface="serif"
+        android:textStyle="italic"
+        android:elegantTextHeight="false"
+        android:layout_below="@+id/btn_wardrobe"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp" />
+
+
+</RelativeLayout>
