@@ -19,15 +19,23 @@ public class SaveImage extends AppCompatActivity {
 //    private String[] spinnerCategory;
 //    private String[] spinnerColor;
 //
-//    Button btnTakePhoto;
-//    Button btnDressMe;
-//    ImageView imgTakenPhoto;
-//    private static final int CAM_REQUEST=1313;
+    Button btnTakePhoto;
+    ImageView imgTakenPhoto;
+    private static final int CAM_REQUEST=1313;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_save_image);
+
+        btnTakePhoto = (Button) findViewById(R.id.btn_take_photo);
+        imgTakenPhoto = (ImageView) findViewById(R.id.img_picture_taken);
+
+        btnTakePhoto.setOnClickListener(new btnTakePhotoClicker());
+
+
+
+
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 //
@@ -56,34 +64,28 @@ public class SaveImage extends AppCompatActivity {
 //            }
 //        });
 //
-//        btnTakePhoto = (Button) findViewById(R.id.btn_add);
-//        btnDressMe = (Button) findViewById(R.id.btn_dress);
-//        imgTakenPhoto = (ImageView) findViewById(R.id.img_picture_taken);
 //
-//        btnTakePhoto.setOnClickListener(new btnTakePhotoClicker());
-//
-//
-//    }
-//
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-//        super.onActivityResult(requestCode, resultCode, data);
-//
-//        if(requestCode == CAM_REQUEST){
-//            Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
-//            imgTakenPhoto.setImageBitmap(thumbnail);
-//        }
-//    }
-//
-//    class btnTakePhotoClicker implements Button.OnClickListener{
-//
-//        @Override
-//        public void onClick(View v) {
-//            Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//            startActivityForResult(cameraIntent,CAM_REQUEST);
-//
-//
-//        }
+      }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == CAM_REQUEST){
+            Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+            imgTakenPhoto.setImageBitmap(thumbnail);
+        }
+    }
+
+    class btnTakePhotoClicker implements Button.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(cameraIntent,CAM_REQUEST);
+
+
+        }
 
     }
 
