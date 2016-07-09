@@ -11,15 +11,20 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
-
-
+    Button addItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        addItem = (Button) findViewById(R.id.btn_add);
     }
 
+
+    public void openSaveImage(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, SaveImage.class);
+        startActivity(intent);
+    }
 
 }

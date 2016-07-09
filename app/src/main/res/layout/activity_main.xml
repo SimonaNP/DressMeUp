@@ -39,6 +39,7 @@
         android:layout_height="64dp"
         android:id="@+id/btn_add"
         android:text="add new item"
+        android:onClick="openSaveImage"
         android:textAllCaps="true"
         android:textSize="24sp"
         android:typeface="serif"
