@@ -8,9 +8,10 @@
 
     <Button
         android:layout_width="256dp"
-        android:layout_height="64dp"
-        android:id="@+id/btn_dress"
-        android:text="dress me"
+        android:layout_height="90dp"
+        android:id="@+id/btn_weather"
+        android:text="check the weather"
+        android:onClick="openWeatherForecast"
         android:textAllCaps="true"
         android:textSize="24sp"
         android:typeface="serif"
@@ -22,7 +23,7 @@
 
     <Button
         android:layout_width="256dp"
-        android:layout_height="64dp"
+        android:layout_height="90dp"
         android:id="@+id/btn_wardrobe"
         android:text="wardrobe"
         android:textAllCaps="true"
@@ -30,13 +31,14 @@
         android:typeface="serif"
         android:textStyle="italic"
         android:elegantTextHeight="false"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/btn_dress"
-        android:layout_alignStart="@+id/btn_dress"/>
+        android:layout_below="@+id/btn_weather"
+        android:layout_alignLeft="@+id/btn_add"
+        android:layout_alignStart="@+id/btn_add"
+        android:layout_marginTop="46dp" />
 
     <Button
         android:layout_width="256dp"
-        android:layout_height="64dp"
+        android:layout_height="90dp"
         android:id="@+id/btn_add"
         android:text="add new item"
         android:onClick="openSaveImage"
@@ -48,6 +50,14 @@
         android:layout_below="@+id/btn_wardrobe"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="46dp" />
+
+    <WebView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/webView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

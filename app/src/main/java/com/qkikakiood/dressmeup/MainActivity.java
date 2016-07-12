@@ -7,17 +7,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
     Button addItem;
+    Button checkTheWeather;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         addItem = (Button) findViewById(R.id.btn_add);
+        checkTheWeather = (Button) findViewById(R.id.btn_weather);
     }
 
 
@@ -25,6 +28,13 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(MainActivity.this, SaveImage.class);
         startActivity(intent);
+    }
+
+    public void openWeatherForecast(View view){
+        WebView browser = (WebView) findViewById(R.id.webView);
+        if (browser != null) {
+            browser.loadUrl("http://sinoptik.bg/vratsa-bulgaria-100725712");
+        }
     }
 
 }
