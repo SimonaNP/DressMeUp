@@ -31,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
 
+//    public void openWardrobe(View view)
+//    {
+//        Intent intent = new Intent(MainActivity.this, Wardrobe.class);
+//        startActivity(intent);
+//        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+//    }
+
     public void openWeatherForecast(View view){
         WebView browser = (WebView) findViewById(R.id.webView);
         if (browser != null) {
