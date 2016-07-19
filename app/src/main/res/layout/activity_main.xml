@@ -26,6 +26,7 @@
         android:layout_height="90dp"
         android:id="@+id/btn_wardrobe"
         android:text="wardrobe"
+        android:onClick="openWardrobe"
         android:textAllCaps="true"
         android:textSize="24sp"
         android:typeface="serif"
