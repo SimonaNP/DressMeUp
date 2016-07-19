@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(MainActivity.this, SaveImage.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
 
     public void openWeatherForecast(View view){
