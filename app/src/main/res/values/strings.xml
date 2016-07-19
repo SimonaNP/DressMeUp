@@ -2,4 +2,7 @@
     <string name="app_name">DressMeUp</string>
     <string name="title_activity_dress_me">DressMe</string>
     <string name="title_activity_save_image">SaveImage</string>
+    <string name="title_activity_wardrobe">Wardrobe</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_list_item">ListItem</string>
 </resources>
