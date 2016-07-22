@@ -12,6 +12,9 @@ public class Cloth {
         this.image = image;
         this.clothID = clothID;
     }
+    public Cloth() {
+
+    }
 
     private Bitmap image;
     private int clothID;

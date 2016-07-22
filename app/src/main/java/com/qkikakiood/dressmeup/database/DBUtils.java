@@ -13,7 +13,7 @@ public class DBUtils {
     private static DBUtils instance;
     private DBHelper db;
 
-    private DBUtils(Context context){
+    public DBUtils(Context context){
         initDB(context);
     }
 
