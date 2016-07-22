@@ -37,7 +37,7 @@ public class DBHelper extends SQLiteOpenHelper {
         database.insert(DB_TABLE_CLOTHES, null, cv);
     }
 
-    private void open(){
+    public void open(){
         database = this.getWritableDatabase();
     }
 
