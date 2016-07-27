@@ -4,6 +4,8 @@ import android.graphics.Bitmap;
 
 import com.qkikakiood.dressmeup.ImageHelper;
 
+import java.util.ArrayList;
+
 /**
  * Created by a on 19.7.2016 г..
  */
@@ -54,5 +56,13 @@ public class Cloth {
 //        this.colour = colour;
 //    }
 
+//    public static ArrayList<Cloth> createClothList() {
+//        ArrayList<Cloth> clothes = new ArrayList<Cloth>();
+//
+//        clothes.add(new Cloth());
+//
+//
+//        return clothes;
+//    }
 
 }

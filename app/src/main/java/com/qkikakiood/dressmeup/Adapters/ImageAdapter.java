@@ -1,11 +1,13 @@
 package com.qkikakiood.dressmeup.Adapters;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.qkikakiood.dressmeup.R;
 import com.qkikakiood.dressmeup.cmn.Cloth;
@@ -14,27 +16,28 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by PC1 on 22.7.2016 г..
+ * Created by a on 25.7.2016 г..
  */
-public class Data_Adapter extends RecyclerView.Adapter<Data_Adapter.View_holder> {
+public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> {
     List<Cloth> list = Collections.emptyList();
     Context context;
 
-    public Data_Adapter(List<Cloth> list, Context context) {
+    public ImageAdapter(List<Cloth> list, Context context) {
         this.list = list;
         this.context = context;
     }
 
     @Override
-    public Data_Adapter.View_holder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ImageAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_list_item,parent,false);
-        View_holder holder=new View_holder(v);
-        return holder;
+        ViewHolder viewHolder=new ViewHolder(v);
+        return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(Data_Adapter.View_holder holder, int position) {
-        holder.image.setImageBitmap(list.get(position).getImage());
+    public void onBindViewHolder(ImageAdapter.ViewHolder viewHolder, int position) {
+        viewHolder.image.setImageBitmap(list.get(position).getImage());
+
     }
 
     @Override
@@ -47,13 +50,13 @@ public class Data_Adapter extends RecyclerView.Adapter<Data_Adapter.View_holder>
         super.onAttachedToRecyclerView(recyclerView);
     }
 
-    public class View_holder extends RecyclerView.ViewHolder{
-        //CardView cv;
-        ImageView image;
+    public static class ViewHolder extends RecyclerView.ViewHolder{
+        CardView cv;
+        public ImageView image;
 
-        public View_holder(View itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
-            //cv = (CardView) itemView.findViewById(R.id.CardView);
+            cv = (CardView) itemView.findViewById(R.id.CardView);
             image = (ImageView) itemView.findViewById(R.id.img_view);
         }
     }

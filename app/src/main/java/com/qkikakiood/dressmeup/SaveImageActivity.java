@@ -22,25 +22,24 @@ import java.util.ArrayList;
 
 //import com.qkikakiood.dressmeup.DatabaseHelper;
 
-public class SaveImage extends AppCompatActivity {
+public class SaveImageActivity extends AppCompatActivity {
 
     Button btnTakePhoto;
     ImageView imgTakenPhoto;
-    //private DatabaseHelper databaseHelper;
-    //public static final String IMAGE_ID = "IMG_ID";
-    //private final String TAG = "SaveImage";
+
     private static final int CAM_REQUEST = 1313;
 
     private DBUtils dbUtils;
-    private ArrayList<Cloth> clothes;
+    public static ArrayList<Cloth> clothes;
+    private DBHelper dbHelper;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_save_image);
-        //databaseHelper = new DatabaseHelper(this);
 
+        dbHelper = new DBHelper(this);
         dbUtils = DBUtils.getInstance(this);
         clothes = new ArrayList<Cloth>();
 
@@ -61,9 +60,7 @@ public class SaveImage extends AppCompatActivity {
                 imgTakenPhoto.setImageBitmap(thumbnail);
                 Cloth newCloth = new Cloth(thumbnail,1);
                 writeRecord(newCloth);
-
-//                databaseHelper.insetImage(thumbnail, IMAGE_ID);
-//                new LoadImageFromDatabaseTask().execute(0);
+                readDB();
         }
     }
 
@@ -96,42 +93,5 @@ public class SaveImage extends AppCompatActivity {
             }while(cursor.moveToNext());
         }
     }
-
-
-
-
-//    private class LoadImageFromDatabaseTask extends AsyncTask<Integer, Integer, ImageHelper> {
-//
-//        private final ProgressDialog LoadImageProgressDialog =  new ProgressDialog(SaveImage.this);
-//
-//        protected void onPreExecute() {
-//            this.LoadImageProgressDialog.setMessage("Loading Image from Db...");
-//            this.LoadImageProgressDialog.show();
-//        }
-//
-//        @Override
-//        protected ImageHelper doInBackground(Integer... integers) {
-//            Log.d("LoadImageFromDatabaseTask : doInBackground", "");
-//            return databaseHelper.getImage(IMAGE_ID);
-//        }
-//
-//        protected void onProgressUpdate(Integer... progress) {
-//        }
-//
-//        protected void onPostExecute(ImageHelper imageHelper) {
-//            Log.d("LoadImageFromDatabaseTask : onPostExecute - ImageID ", imageHelper.getImageId());
-//            if (this.LoadImageProgressDialog.isShowing()) {
-//                this.LoadImageProgressDialog.dismiss();
-//            }
-//            setUpImage(imageHelper.getImageByteArray());
-//        }
-//
-//    }
-//
-//    private void setUpImage(byte[] bytes) {
-//        Log.d(TAG, "Decoding bytes");
-//        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-//        imgTakenPhoto.setImageBitmap(bitmap);
-//    }
 
 }

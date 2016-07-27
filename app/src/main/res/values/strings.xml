@@ -5,4 +5,5 @@
     <string name="title_activity_wardrobe">Wardrobe</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="title_activity_list_item">ListItem</string>
+    <string name="check_the_weather">check the weather</string>
 </resources>

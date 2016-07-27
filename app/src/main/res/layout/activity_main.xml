@@ -10,7 +10,7 @@
         android:layout_width="256dp"
         android:layout_height="90dp"
         android:id="@+id/btn_weather"
-        android:text="check the weather"
+        android:text="@string/check_the_weather"
         android:onClick="openWeatherForecast"
         android:textAllCaps="true"
         android:textSize="24sp"

@@ -18,11 +18,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SaveImage"
+            android:name=".SaveImageActivity"
             android:label="@string/title_activity_save_image"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Wardrobe"
+            android:name=".WardrobeActivity"
             android:label="@string/title_activity_wardrobe"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

@@ -1,15 +1,12 @@
 package com.qkikakiood.dressmeup;
 
+
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
-import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
     Button addItem;
@@ -26,14 +23,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void openSaveImage(View view)
     {
-        Intent intent = new Intent(MainActivity.this, SaveImage.class);
+        Intent intent = new Intent(MainActivity.this, SaveImageActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
 
     public void openWardrobe(View view)
     {
-        Intent intent = new Intent(MainActivity.this, Wardrobe.class);
+        Intent intent = new Intent(MainActivity.this, WardrobeActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
     }
